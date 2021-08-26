@@ -305,3 +305,27 @@ public static bool ValidarNombre(string nombre)
     return nombreValido;
 }
 ~~~
+
+### - Tercer Proyecto: API Básica
+El siguiente proyecto consiste en una API web que maneja información relevante a la pandemia de SarsCoVid-19 ocurrida durante los 2 últimos años. El proyecto consta de la API web, la cual maneja esta información, y la aplicación que consume esta misma.
+
+#### - API Web
+La API maneja esta información que, al principio de su desarrollo, se valió del archivo .csv proveído por el sitio oficial del gobierno de Córdoba, el cual se usó para leer sus registros y guardarlos en un archivo de base de datos SQLite portable para facilitar la consulta y registro de nuevos casos.
+
+##### Endpoints
+La API contiene los siguientes endpoints de consulta y registro de información:
+* /covid
+* /covid/total
+* /covid/update
+
+-- El primer endpoint se realizó más que nada para consultar la información completa, de manera que se pueda ver el filtrado a la hora de buscar por los diferentes parámetros.
+-- El segundo endpoint es el que se usará para filtrar por los diferentes parámetros elegidos por el usuario.
+Los parametros disponibles son los siguientes:
+* FechaInicio
+* FechaFin
+* EdadInicio
+* EdadFin
+* Genero
+* Provincia
+
+Estos parámetros son pasados por medio de un modelo de vistas o ViewModel llamado BusquedaViewModel, por el cual el usuario envia los parámetros por medio de los atributos de esta clase -- continuar acá
