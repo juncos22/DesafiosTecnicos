@@ -13,77 +13,77 @@ namespace Covid19Casos.Client.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 1 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 2 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 3 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 4 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 5 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 6 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 7 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 8 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 9 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Covid19Casos.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 10 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Covid19Casos.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 11 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Covid19Casos.Shared;
 
 #line default
@@ -98,17 +98,23 @@ using Covid19Casos.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 35 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\Pages\SaveData.razor"
+#line 38 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\Pages\SaveData.razor"
        
-    //public CasoResponse Response = new CasoResponse();
-    public CasoViewModel Model = new CasoViewModel();
+    // Objeto de tipo CasoViewModel que capturará la información para
+    // enviarla al modelo de datos y realizar el registro.
+    // Se inicializa con algunos atributos por defecto a modo de facilitar algunas validaciones.
+    public CasoViewModel Model = new CasoViewModel { Fecha = DateTime.Now, Genero = "M", Edad = 0 };
 
+    // Metodo asíncrono para guardar un nuevo caso de Covid.
+    // Luego de realizar la operación, se llamará al método para limpiar los campos.
     async Task GuardarCaso()
     {
         await Http.PostAsJsonAsync<CasoViewModel>("covid/update", Model);
+
         LimpiarCampos();
     }
 
+    // Metodo para resetear los valores de cada campo del modelo.
     void LimpiarCampos()
     {
         Model.Fecha = DateTime.Now;
@@ -116,14 +122,6 @@ using Covid19Casos.Shared;
         Model.Genero = "M";
         Model.Provincia = "";
     }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        Model.Fecha = DateTime.Now;
-        Model.Genero = "M";
-    }
-
 
 #line default
 #line hidden

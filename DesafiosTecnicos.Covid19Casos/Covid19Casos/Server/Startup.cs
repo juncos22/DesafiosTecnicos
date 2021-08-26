@@ -26,19 +26,14 @@ namespace Covid19Casos.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // Obtiene la ruta actual (ejecutando assembly)
-            //string currentPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            //// El nombre del archivo de base de datos sqlite    
-            //string dbFileName = "Covid19Casos.db";
-            //// Crea la ruta completa combinando las 2 anteriores.
-            //string absolutePath = Path.Combine(currentPath, dbFileName);
-
+            // Obtiene la cadena de conexión, que en este caso sería la ubicación del archivo
+            // de base de datos sqlite ubicado en la carpeta Data.
+            // Esta cadena de conexión se definió en el archivo appsettings.json
             string cnnString = Configuration.GetConnectionString("Covid19Casos");
-            // Se agrega el CORS.
-            services.AddCors();
-
+            
             // Habilita el uso de SQLite y le envia la ruta absoluta.
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite($"Filename={cnnString}"));
+            // Se agrega el CORS.
             services.AddCors();
             services.AddControllersWithViews();
             services.AddRazorPages();

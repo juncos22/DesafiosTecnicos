@@ -18,11 +18,20 @@ namespace Covid19Casos.Shared
     {
         // Atributo Fecha donde se establece el formato aceptado por los navegadores
         // además del tipo de dato del atributo para que sea interpretado por los mismos.
+        // Ademas se agregó la anotación para validar que no se envíe el formulario sin valores.
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         public DateTime Fecha { get; set; }
+
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [Range(1, 100, ErrorMessage = "El valor debe estar entre 1 y 100 años.")]
         public int Edad { get; set; }
+        
+        // El atributo Genero no necesita validación ya que tendrá el valor 'M' por defecto.
         public string Genero { get; set; }
+        
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         public string Provincia { get; set; }
     }
 }

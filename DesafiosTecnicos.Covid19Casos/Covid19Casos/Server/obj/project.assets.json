@@ -1574,23 +1574,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nicol\\.nuget\\packages\\": {},
+    "C:\\Users\\Nicolas\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nicol\\source\\repos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Server\\Covid19Casos.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Nicolas\\source\\repos\\DesafiosTecnicos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Server\\Covid19Casos.Server.csproj",
       "projectName": "Covid19Casos.Server",
-      "projectPath": "C:\\Users\\nicol\\source\\repos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Server\\Covid19Casos.Server.csproj",
-      "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nicol\\source\\repos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Server\\obj\\",
+      "projectPath": "C:\\Users\\Nicolas\\source\\repos\\DesafiosTecnicos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Server\\Covid19Casos.Server.csproj",
+      "packagesPath": "C:\\Users\\Nicolas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nicolas\\source\\repos\\DesafiosTecnicos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nicolas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1604,11 +1604,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\nicol\\source\\repos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Client\\Covid19Casos.Client.csproj": {
-              "projectPath": "C:\\Users\\nicol\\source\\repos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Client\\Covid19Casos.Client.csproj"
+            "C:\\Users\\Nicolas\\source\\repos\\DesafiosTecnicos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Client\\Covid19Casos.Client.csproj": {
+              "projectPath": "C:\\Users\\Nicolas\\source\\repos\\DesafiosTecnicos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Client\\Covid19Casos.Client.csproj"
             },
-            "C:\\Users\\nicol\\source\\repos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Shared\\Covid19Casos.Shared.csproj": {
-              "projectPath": "C:\\Users\\nicol\\source\\repos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Shared\\Covid19Casos.Shared.csproj"
+            "C:\\Users\\Nicolas\\source\\repos\\DesafiosTecnicos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Shared\\Covid19Casos.Shared.csproj": {
+              "projectPath": "C:\\Users\\Nicolas\\source\\repos\\DesafiosTecnicos\\DesafiosTecnicos.Covid19Casos\\Covid19Casos\\Shared\\Covid19Casos.Shared.csproj"
             }
           }
         }

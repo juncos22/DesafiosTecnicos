@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Covid19Casos.Shared
 {
+    /// <summary>
+    /// Clase que se va a encargar de obtener los parametros de busqueda
+    /// del usuario sin tener que darle acceso directo al modelo de datos.
+    /// </summary>
     public class BusquedaViewModel
     {
         public DateTime FechaInicio { get; set; }

@@ -3,6 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Covid19Casos.Shared
 {
+    /// <summary>
+    /// Clase que sirve de modelo de datos para guardar la información en la base de datos.
+    /// Posee cada uno de los campos de la tabla en la base de datos.
+    /// </summary>
     public class Caso
     {
         [Key]

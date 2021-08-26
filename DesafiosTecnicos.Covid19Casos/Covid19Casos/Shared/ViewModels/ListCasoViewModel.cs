@@ -14,6 +14,8 @@ namespace Covid19Casos.Shared
     {
         // Atributo Fecha donde se establece el formato aceptado por los navegadores
         // además del tipo de dato del atributo para que sea interpretado por los mismos.
+        // En este caso no es necesario agregar la anotación Required ya que esta clase
+        // solamente se encarga de recibir la información y mostrarla al usuario.
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public DateTime Fecha { get; set; }

@@ -13,77 +13,77 @@ namespace Covid19Casos.Client.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 1 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 2 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 3 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 4 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 5 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 6 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 7 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 8 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 9 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Covid19Casos.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 10 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Covid19Casos.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
+#line 11 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\_Imports.razor"
 using Covid19Casos.Shared;
 
 #line default
@@ -98,32 +98,43 @@ using Covid19Casos.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 101 "C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\Pages\Index.razor"
+#line 101 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\Pages\Index.razor"
        
+    // Objeto Response que recibirá el resultado de la búsqueda.
     public CasoResponse Response { get; set; }
+    // Objeto Busqueda que recibirá todos los parámetros para filtrar la información.
     public BusquedaViewModel Busqueda = new BusquedaViewModel();
+
+    // Lista de provincias registradas para mostrar en el InputSelect.
     public List<string> provincias = new List<string>();
 
+    // Metodo para resetear los valores de cada campo y llamar de nuevo a la función 
+    // para traer toda la información.
     async Task LimpiarFiltros()
     {
-        Busqueda.FechaInicio = DateTime.Now;
-        Busqueda.FechaFin = DateTime.Now;
+        Busqueda.FechaInicio = DateTime.MinValue;
+        Busqueda.FechaFin = DateTime.MinValue;
         Busqueda.EdadInicio = 0;
         Busqueda.EdadFin = 0;
-        Busqueda.Genero = "M";
-        Busqueda.Provincia = provincias[0];
+        Busqueda.Genero = "";
+        Busqueda.Provincia = "";
 
+        // El objeto Response se deja en nulo a efectos de que muestre el mensaje de carga de información.
         Response = null;
 
         await CargarInformacion();
     }
 
+    // Obtiene todas las provincias registradas para filtrar.
     void CargarProvincias()
     {
+        // Evalua que el objeto Response y su información no sean nulos.
         if (Response != null && Response.Data != null)
         {
             foreach (var item  in Response.Data)
             {
+                // Evalua si la lista de provincias contiene la provincia del item actual,
+                // de ser así, las agregará a la misma.
                 if (!provincias.Contains(item.Provincia))
                 {
                     provincias.Add(item.Provincia);
@@ -132,23 +143,29 @@ using Covid19Casos.Shared;
         }
     }
 
+    // Método asíncrono para cargar la información completa.
     async Task CargarInformacion()
     {
+        // El objeto Response recibe de forma asíncrona el resultado de la petición
+        // realizada al endpoint /covid del controlador CovidController.
+        // La respuesta traerá un objeto del tipo CasoResponse.
         Response = await Http.GetFromJsonAsync<CasoResponse>("covid");
     }
 
+    // Se llama al metodo asíncrono OnInitializedAsync para
+    // establecer valores por defecto a algunos atributos y llamar a la función
+    // para cargar la información completa y sin filtros.
     protected override async Task OnInitializedAsync()
     {
-        Busqueda.Genero = "M";
-        Busqueda.FechaInicio = DateTime.Now;
-        Busqueda.FechaFin = DateTime.Now;
 
         await CargarInformacion();
 
         CargarProvincias();
-        Busqueda.Provincia = provincias[0];
     }
 
+    // Se consulta la información por medio de los campos a filtrar, realizando una petición GET
+    // al endpoint /covid/total y pasandole todos los atributos del objeto Busqueda de tipo BusquedaViewModel.
+    // El objeto Response se deja en nulo a efectos de que muestre el mensaje de carga de información.
     async Task ConsultarInformacion()
     {
         Response = null;

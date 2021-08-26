@@ -8,6 +8,9 @@
     <div class="col-md-6 m-auto">
         <h4>Agregar un nuevo caso</h4>
         <EditForm Model="@Model" OnValidSubmit="@GuardarCaso">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
             <div class="form-group">
                 <label>Fecha del Caso</label>
                 <InputDate class="form-control" @bind-Value="Model.Fecha" />
@@ -33,15 +36,21 @@
 </div>
 
 @code {
-    //public CasoResponse Response = new CasoResponse();
-    public CasoViewModel Model = new CasoViewModel();
+    // Objeto de tipo CasoViewModel que capturará la información para
+    // enviarla al modelo de datos y realizar el registro.
+    // Se inicializa con algunos atributos por defecto a modo de facilitar algunas validaciones.
+    public CasoViewModel Model = new CasoViewModel { Fecha = DateTime.Now, Genero = "M", Edad = 0 };
 
+    // Metodo asíncrono para guardar un nuevo caso de Covid.
+    // Luego de realizar la operación, se llamará al método para limpiar los campos.
     async Task GuardarCaso()
     {
         await Http.PostAsJsonAsync<CasoViewModel>("covid/update", Model);
+
         LimpiarCampos();
     }
 
+    // Metodo para resetear los valores de cada campo del modelo.
     void LimpiarCampos()
     {
         Model.Fecha = DateTime.Now;
@@ -49,12 +58,4 @@
         Model.Genero = "M";
         Model.Provincia = "";
     }
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        Model.Fecha = DateTime.Now;
-        Model.Genero = "M";
-    }
-
 }

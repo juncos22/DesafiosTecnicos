@@ -208,13 +208,13 @@
       "mscorlib.dll": "sha256-9AZ7YsJz\/p2gr4E0EQXdHBqwDxoXqtzxhqC6aRsa2K8=",
       "netstandard.dll": "sha256-yOOty6BTX3e57YAEHK5a4nku\/lj0vi7jg\/eQZAjbDQk=",
       "System.Private.CoreLib.dll": "sha256-rraBQp6NevIQiELPVfDFDl5pv9QVJqCiZhB5bkpiZ88=",
-      "Covid19Casos.Shared.dll": "sha256-PXnBSJknrmR5aS0Tv4aMsJxNG4LJjhCbswNglE96gMQ=",
-      "Covid19Casos.Client.dll": "sha256-Hm3V3wigryk2RTLEuy+ovIHZF\/i1m\/PYltZ\/WqLr\/xQ="
+      "Covid19Casos.Shared.dll": "sha256-V\/XfRQq6ZQR1t6KYZCZjsGW5Wg4Mv5rtnqdYjSb3nWA=",
+      "Covid19Casos.Client.dll": "sha256-ENajTDJl\/yhOjonc4QwqWhjCnI3F+8xk7Uans\/gEWrI="
     },
     "lazyAssembly": null,
     "pdb": {
-      "Covid19Casos.Shared.pdb": "sha256-rhIxr3ugwfGRuOq8GfCvHGbAaqt+c+IyQXDhKK6De\/w=",
-      "Covid19Casos.Client.pdb": "sha256-8YXWyNSq3GyXx9zV+RnDm7War46kKYvTvIWMybwzt8c="
+      "Covid19Casos.Shared.pdb": "sha256-AwPaDdYmT5MsimFd9VEtwqolU5KHVjgg8P8FOCB\/2gM=",
+      "Covid19Casos.Client.pdb": "sha256-YDBpRsjqhNe5Saj730cywoNJOBDQ2dqe7wZSLj0ilyo="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-L2vkcKzmXJtf+J7db5TbDMBckrgqJ5qc0ZzVIdRlm0I=",

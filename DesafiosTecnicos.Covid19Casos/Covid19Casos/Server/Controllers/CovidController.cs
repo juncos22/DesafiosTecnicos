@@ -7,10 +7,14 @@ using Covid19Casos.Shared;
 
 namespace Covid19Casos.Server.Controllers
 {
+    /// <summary>
+    /// Clase que será el controlador con todos los endpoints a los que acceda el usuario.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class CovidController : ControllerBase
     {
+        // Atributo inyectado que maneja las operaciones a la base de datos.
         private readonly ApplicationDbContext _db;
 
         // Le realiza la inyección de dependencias en el constructor.
@@ -81,7 +85,7 @@ namespace Covid19Casos.Server.Controllers
         /// <param name="genero">El genero correspondiente a las personas afectadas.</param>
         /// <param name="provincia">La provincia proviniente de las personas afectadas.</param>
         /// <returns>
-        /// La respuesta como objeto CasoResponse que obtendrá el codigo de estado de la peticion,
+        /// La respuesta como objeto CasoResponse que obtendrá el codigo de estado de la petición,
         /// el mensaje de la respuesta (en caso de fallar), y el objeto Data como una lista 
         /// de casos del objeto ListCasoViewModel.
         /// </returns>
@@ -97,8 +101,8 @@ namespace Covid19Casos.Server.Controllers
                 // los campos y parametros establecidos.
                 var casos = (from c in _db.Casos
                              where c.Fecha >= FechaInicio.Date && c.Fecha <= FechaFin.Date
-                             && c.Edad >= EdadInicio && c.Edad <= EdadFin
-                             && c.Genero == Genero && c.Provincia == Provincia
+                             || c.Edad >= EdadInicio && c.Edad <= EdadFin
+                             || c.Genero == Genero || c.Provincia == Provincia
                              select new ListCasoViewModel
                              {
                                  Fecha = c.Fecha,
@@ -133,10 +137,8 @@ namespace Covid19Casos.Server.Controllers
         /// <param name="model">El modelo de datos como un objeto de tipo CasoViewModel</param>
         /// <returns>La respuesta de tipo CasoResponse que mostrará la informacion al usuario.</returns>
         [HttpPost("update")]
-        public async Task<CasoResponse> Update(CasoViewModel model)
+        public async Task Update(CasoViewModel model)
         {
-            // Se crea el objeto response de tipo CasoResponse.
-            var response = new CasoResponse();
             try
             {
                 // Se crea el objeto de datos tipo Caso donde, por medio del modelo de datos
@@ -151,28 +153,16 @@ namespace Covid19Casos.Server.Controllers
 
                 // Por medio del objeto _db de tipo ApplicationDbContext se guardará el nuevo registro
                 // de tipo Caso en la base de datos.
-                _db.Casos.Add(caso);
+                await _db.Casos.AddAsync(caso);
                 // Se guardan los cambios en la base de datos.
-                _db.SaveChanges();
+                await _db.SaveChangesAsync();
 
-                // Si la operacion tuvo éxito, el objeto response devolverá el codigo 200 y el mensaje
-                // informando al usuario que el registro se hizo con éxito.
-                response.StatusCode = 200;
-                response.Mensaje = "Caso registrado con exito";
             }
             catch (Exception e)
             {
                 // Se imprime e mensaje de la excepción para saber la raíz del problema.
                 Console.WriteLine($"DATA ERROR: {e.Message}");
-
-                // Si la operacion falló, el objeto response devolverá el codigo 400 y el mensaje
-                // informando al usuario de la excepción ocurrida en el proceso.
-                response.StatusCode = 400;
-                response.Mensaje = "Hubo un error al intentar registrar el nuevo caso";
             }
-            // Se devuelve la respuesta al usuario por medio del metodo Ok que guarda el 
-            // objeto de tipo CasoResponse.
-            return await Task.FromResult(response);
         }
     }
 }
