@@ -1,0 +1,12 @@
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\bin\Debug\net5.0\Covid19Casos.Shared.deps.json
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\bin\Debug\net5.0\Covid19Casos.Shared.dll
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\bin\Debug\net5.0\ref\Covid19Casos.Shared.dll
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\bin\Debug\net5.0\Covid19Casos.Shared.pdb
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\Covid19Casos.Shared.csproj.AssemblyReference.cache
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\Covid19Casos.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\Covid19Casos.Shared.AssemblyInfoInputs.cache
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\Covid19Casos.Shared.AssemblyInfo.cs
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\Covid19Casos.Shared.csproj.CoreCompileInputs.cache
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\Covid19Casos.Shared.dll
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\ref\Covid19Casos.Shared.dll
+C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Shared\obj\Debug\net5.0\Covid19Casos.Shared.pdb

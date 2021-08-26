@@ -1,0 +1,7 @@
+C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\bin\Debug\SimplificarFracciones.exe.config
+C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\bin\Debug\SimplificarFracciones.exe
+C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\bin\Debug\SimplificarFracciones.pdb
+C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.csproj.AssemblyReference.cache
+C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.csproj.CoreCompileInputs.cache
+C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.exe
+C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.pdb

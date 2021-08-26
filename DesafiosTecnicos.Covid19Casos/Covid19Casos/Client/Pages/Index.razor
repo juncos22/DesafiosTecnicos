@@ -1,0 +1,157 @@
+﻿@page "/"
+
+
+@inject HttpClient Http
+
+<h1>Covid19 Casos</h1>
+
+Aplicacion Web para consultar casos relacionados al SarsCovid19
+
+<div class="row m-3">
+    <div class="col-md-4">
+        <h4>Formulario de Filtrado</h4>
+        <EditForm Model="@Busqueda" OnValidSubmit="@ConsultarInformacion">
+            <div class="form-group">
+                <label>Fecha de Inicio</label>
+                <InputDate class="form-control" @bind-Value="@Busqueda.FechaInicio" />
+            </div>
+            <div class="form-group">
+                <label>Fecha de Fin</label>
+                <InputDate class="form-control" @bind-Value="@Busqueda.FechaFin" />
+            </div>
+            <div class="form-group">
+                <label>Edad de Inicio</label>
+                <InputNumber class="form-control" @bind-Value="@Busqueda.EdadInicio" />
+            </div>
+            <div class="form-group">
+                <label>Edad de Fin</label>
+                <InputNumber class="form-control" @bind-Value="@Busqueda.EdadFin" />
+            </div>
+            <div class="form-group">
+                <label>Género</label>
+                <InputSelect class="form-control" @bind-Value="@Busqueda.Genero">
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </InputSelect>
+            </div>
+            <div class="form-group">
+                <label>Provincia</label>
+                <InputSelect class="form-control" @bind-Value="@Busqueda.Provincia">
+                    @foreach (var provincia in provincias)
+                    {
+                        <option value="@provincia">@provincia</option>
+                    }
+                </InputSelect>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Buscar Casos</button>
+        </EditForm>
+    </div>
+    <div class="col-md-8">
+        <button class="btn btn-secondary" @onclick="@LimpiarFiltros">Limpiar Filtros</button>
+
+        @if (Response == null)
+        {
+            <p><em>Cargando información...</em></p>
+        }
+        else if (Response.Data == null)
+        {
+            if (Response.Mensaje != null)
+            {
+                <p class="text-danger">@Response.Mensaje</p>
+            }
+            else
+            {
+                <p class="text-info">No hay información disponible.</p>
+            }
+        }
+        else
+        {
+            <table class="table table-hover">
+                <thead class="bg-info">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Edad</th>
+                        <th>Genero</th>
+                        <th>Provincia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Response.Data)
+                    {
+                        <tr>
+                            <td>@item.Fecha.Date.ToString()</td>
+                            <td>@item.Edad años</td>
+                            @if (item.Genero == "M")
+                            {
+                                <td>Masculino</td>
+                            }
+                            else
+                            {
+                                <td>Femenino</td>
+                            }
+                            <td>@item.Provincia</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+@code {
+    public CasoResponse Response { get; set; }
+    public BusquedaViewModel Busqueda = new BusquedaViewModel();
+    public List<string> provincias = new List<string>();
+
+    async Task LimpiarFiltros()
+    {
+        Busqueda.FechaInicio = DateTime.Now;
+        Busqueda.FechaFin = DateTime.Now;
+        Busqueda.EdadInicio = 0;
+        Busqueda.EdadFin = 0;
+        Busqueda.Genero = "M";
+        Busqueda.Provincia = provincias[0];
+
+        Response = null;
+
+        await CargarInformacion();
+    }
+
+    void CargarProvincias()
+    {
+        if (Response != null && Response.Data != null)
+        {
+            foreach (var item  in Response.Data)
+            {
+                if (!provincias.Contains(item.Provincia))
+                {
+                    provincias.Add(item.Provincia);
+                }
+            }
+        }
+    }
+
+    async Task CargarInformacion()
+    {
+        Response = await Http.GetFromJsonAsync<CasoResponse>("covid");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Busqueda.Genero = "M";
+        Busqueda.FechaInicio = DateTime.Now;
+        Busqueda.FechaFin = DateTime.Now;
+
+        await CargarInformacion();
+
+        CargarProvincias();
+        Busqueda.Provincia = provincias[0];
+    }
+
+    async Task ConsultarInformacion()
+    {
+        Response = null;
+        Response = await Http.GetFromJsonAsync<CasoResponse>($"covid/total?FechaInicio={Busqueda.FechaInicio}&FechaFin={Busqueda.FechaFin}&EdadInicio={Busqueda.EdadInicio}&EdadFin={Busqueda.EdadFin}&Genero={Busqueda.Genero}&Provincia={Busqueda.Provincia}");
+    }
+
+}

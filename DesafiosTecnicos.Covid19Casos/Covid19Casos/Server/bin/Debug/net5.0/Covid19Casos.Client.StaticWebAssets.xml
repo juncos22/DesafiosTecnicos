@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\nicol\source\repos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>
