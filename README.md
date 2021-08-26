@@ -74,7 +74,7 @@ Este proyecto consiste en una aplicación de consola para validar diferentes est
 Para esto se crearon diferentes funciones para validar estos patrones, de esta forma, el código de la función principal será mas legible.
 
 ###### Función EsNombreCompleto(string palabra) : bool
-Lo que hará esta función será evaluar que la longitud del nombre sea igual o mayor a 2 y que la palabra no contenga un punto en ningún caracter de la misma. De ser así, el nombre devolverá <true> o verdadero, de lo contrario devolverá <false> o falso:
+Lo que hará esta función será evaluar que la longitud del nombre sea igual o mayor a 2 y que la palabra no contenga un punto en ningún caracter de la misma. De ser así, el nombre devolverá true o verdadero, de lo contrario devolverá false o falso:
 
 ~~~
 static bool EsNombreCompleto(string palabra)
@@ -85,7 +85,7 @@ static bool EsNombreCompleto(string palabra)
 ~~~
 
 ###### Función EstaCapitalizada(string palabra) : bool
-Esta función validará que la palabra ingresada este capitalizada, es decir, que su letra inicial sea mayúscula. Para esto se realizará una operación donde se comparará la primera letra de la palabra con su versión en mayúscula, para esto se debe convertir el primer caracter de la misma en cadena o <string>. Si esto es así, la función devolverá <true>, de lo contrario, devolverá <false>:
+Esta función validará que la palabra ingresada este capitalizada, es decir, que su letra inicial sea mayúscula. Para esto se realizará una operación donde se comparará la primera letra de la palabra con su versión en mayúscula, para esto se debe convertir el primer caracter de la misma en cadena o string. Si esto es así, la función devolverá true, de lo contrario, devolverá false:
 
 ~~~
 static bool EstaCapitalizada(string palabra)
@@ -97,7 +97,7 @@ static bool EstaCapitalizada(string palabra)
 
 ###### Función EsInicial(string palabra) : bool
 Esta función corroborará si la palabra está escrita en su forma de inicial.
-Para esto evaluará que la longitud de la palabra sea de 2 caracteres solamente, y que el segundo caracter de la palabra sea un punto. Se ser así, la función devolverá <true>, de lo contrario devolverá <false>.
+Para esto evaluará que la longitud de la palabra sea de 2 caracteres solamente, y que el segundo caracter de la palabra sea un punto. Se ser así, la función devolverá true, de lo contrario devolverá false.
 ~~~
 static bool EsInicial(string palabra)
 {
@@ -122,14 +122,14 @@ if (palabras.Length == 2)
     if (EstaCapitalizada(palabras[0]) && EstaCapitalizada(palabras[1]))
     {
     ~~~
-    * Si ambas palabras son nombres completos, la variable <nombreValido> recibirá el valor <true>, de lo contrario continuará con la siguiente condición.
+    * Si ambas palabras son nombres completos, la variable nombreValido recibirá el valor true, de lo contrario continuará con la siguiente condición.
     ~~~
      if (EsNombreCompleto(palabras[0]) && EsNombreCompleto(palabras[1]))
      {
         nombreValido = true;
      }
     ~~~
-    * Si la primera palabra es inicial y la segunda no lo es, la variable <nombreValido> será <true>, de lo contrario será <false>.
+    * Si la primera palabra es inicial y la segunda no lo es, la variable nombreValido será true, de lo contrario será false.
     ~~~
     else if (EsInicial(palabras[0]) && !EsInicial(palabras[1]))
     {
@@ -140,7 +140,7 @@ if (palabras.Length == 2)
         nombreValido = false;
     }
     ~~~
-    * En caso de que ninguna de las condiciones anteriores se haya dado, el valor de la variable nombreValido será <false>.
+    * En caso de que ninguna de las condiciones anteriores se haya dado, el valor de la variable nombreValido será false.
     ~~~
      else
      {
@@ -153,13 +153,13 @@ else if (palabras.Length == 3)
 {
 ~~~
 6. En este punto, comenzará a evaluar que las 3 palabras cumplan con las siguientes condiciones:
-    * En caso de que las 3 palabras estén capitalizadas, pasará a evaluar la siguiente condición, de lo contrario <nombreValido> automáticamente será <false>.
+    * En caso de que las 3 palabras estén capitalizadas, pasará a evaluar la siguiente condición, de lo contrario nombreValido automáticamente será false.
     ~~~
      if (EstaCapitalizada(palabras[0]) && EstaCapitalizada(palabras[1]) 
     && EstaCapitalizada(palabras[2]))
     {
     ~~~
-    * Si las 3 palabras son nombres completos, <nombreValido> será <true>, de lo contrario pasará a evaluar la siguiente condición.
+    * Si las 3 palabras son nombres completos, nombreValido será true, de lo contrario pasará a evaluar la siguiente condición.
     ~~~
     if (EsNombreCompleto(palabras[0]) && EsNombreCompleto(palabras[1])
         && EsNombreCompleto(palabras[2]))
@@ -197,7 +197,7 @@ else
     nombreValido = false;
 }
 ~~~
-8. Finalmente, se devuelve el valor de la variable <nombreValido>.
+8. Finalmente, se devuelve el valor de la variable nombreValido.
 ~~~
     return nombreValido;
 }
