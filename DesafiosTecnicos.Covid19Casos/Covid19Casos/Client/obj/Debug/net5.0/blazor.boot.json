@@ -209,12 +209,12 @@
       "netstandard.dll": "sha256-yOOty6BTX3e57YAEHK5a4nku\/lj0vi7jg\/eQZAjbDQk=",
       "System.Private.CoreLib.dll": "sha256-rraBQp6NevIQiELPVfDFDl5pv9QVJqCiZhB5bkpiZ88=",
       "Covid19Casos.Shared.dll": "sha256-V\/XfRQq6ZQR1t6KYZCZjsGW5Wg4Mv5rtnqdYjSb3nWA=",
-      "Covid19Casos.Client.dll": "sha256-ENajTDJl\/yhOjonc4QwqWhjCnI3F+8xk7Uans\/gEWrI="
+      "Covid19Casos.Client.dll": "sha256-h5B0RXnNPq7jsSAUI6xee1ZbCfj7ykZGdCmpio+DonQ="
     },
     "lazyAssembly": null,
     "pdb": {
       "Covid19Casos.Shared.pdb": "sha256-AwPaDdYmT5MsimFd9VEtwqolU5KHVjgg8P8FOCB\/2gM=",
-      "Covid19Casos.Client.pdb": "sha256-YDBpRsjqhNe5Saj730cywoNJOBDQ2dqe7wZSLj0ilyo="
+      "Covid19Casos.Client.pdb": "sha256-\/qbQTwedOVXqWKPR5adjRWe+GaAi\/jpbmfZYnKalFTE="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-L2vkcKzmXJtf+J7db5TbDMBckrgqJ5qc0ZzVIdRlm0I=",

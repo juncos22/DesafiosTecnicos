@@ -174,9 +174,11 @@ else if (palabras.Length == 3)
         nombreValido = true;
      }
     ~~~
-    * Si la primera palabra no es inicial y es un nombre completo, la segunda es inicial pero la tercera no lo es, el nombre será válido, de lo contrario, se considerará nombre no válido.
+    * Si la primera palabra no es inicial y es un nombre completo, la segunda es inicial pero la tercera no lo es pero es un nombre completo, el nombre será válido, de lo contrario, se considerará nombre no válido.
     ~~~
-    else if (!EsInicial(palabras[0]) && EsNombreCompleto(palabras[0]) && EsInicial(palabras[1]) && !EsInicial(palabras[2])) 
+    else if (!EsInicial(palabras[0]) && EsNombreCompleto(palabras[0]) 
+    && EsInicial(palabras[1]) 
+    && !EsInicial(palabras[2]) && EsNombreCompleto(palabras[2]))
     {
         nombreValido = true;
     }
@@ -278,12 +280,13 @@ public static bool ValidarNombre(string nombre)
                     nombreValido = true;
                 }
                 else if (!EsInicial(palabras[0]) && EsNombreCompleto(palabras[0]) 
-                 && EsInicial(palabras[1]) && !EsInicial(palabras[2])) 
+                && EsInicial(palabras[1]) 
+                && !EsInicial(palabras[2]) && EsNombreCompleto(palabras[2]))
                     {                               
                     // La ultima posibilidad será que el primer nombre
                     // no sea una inicial y que sea un nombre completo
                     // ademas de que el segundo nombre sea inicial, y 
-                    // el apellido no lo sea, de lo contrario 
+                    // el apellido no lo sea pero sea un nombre completo, de lo contrario 
                     // el nombre ingresado será invalido.
                         nombreValido = true;        
                     }                               
@@ -362,7 +365,7 @@ Los parametros disponibles son los siguientes:
 * Genero
 * Provincia
 
-Estos parámetros son pasados por medio de un modelo de vistas o ViewModel llamado BusquedaViewModel, por el cual el usuario envía los parámetros por medio de los atributos de esta clase. Los parámetros de la clase son enviados hacia el método que contiene el endpoint /covid/total donde se van a filtrar los datos por los parametros que reciba y devolverá la respuesta por medio de la clase CasoResponse.
+Estos parámetros son pasados por medio de un modelo de vistas o ViewModel llamado BusquedaViewModel, por el cual el usuario envía los parámetros por medio de los atributos de esta clase. Los parámetros de la clase son enviados hacia el método que contiene el endpoint /covid/total donde se van a filtrar los datos por los parametros que reciba y devolverá la respuesta por medio de la clase CasoResponse con la lista de objetos de tipo ListCasoViewModel, además de mostrar el total de casos como la cantidad de items que recibió esta lista.
 
 #### - Blazor UI
 La vista está hecha con el framework Blazor y diseñado con Bootstrap donde el usuario interactua con el modelo de vistas (ViewModel) el cual le proveerá la información requerida en sus consultas. Se mantuvo una interfaz simple y concisa la cual consiste en 2 páginas principales:
@@ -383,4 +386,4 @@ Las validaciones son las siguientes:
   
 La primer validación se usó en la mayoría de los atributos de la clase CasoViewModel, para evitar campos vacíos en el formulario, mientras que la segunda validación se usó solamente para el atributo Edad, el cual no debe permitir valores menores o iguales a 0 ni mayores a 100 (se manejó una edad promedio aproximada de vida).
 
-Además se agregó una función para limpiar los filtros de búsqueda pra facilitar nuevas consultas a la información.
+Además se agregó una función para limpiar los filtros de búsqueda para facilitar nuevas consultas a la información.

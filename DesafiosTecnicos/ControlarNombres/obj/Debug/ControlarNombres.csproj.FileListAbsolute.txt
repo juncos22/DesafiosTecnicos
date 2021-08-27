@@ -5,3 +5,10 @@ C:\Users\nicol\source\repos\DesafiosTecnicos\ControlarNombres\obj\Debug\Controla
 C:\Users\nicol\source\repos\DesafiosTecnicos\ControlarNombres\obj\Debug\ControlarNombres.exe
 C:\Users\nicol\source\repos\DesafiosTecnicos\ControlarNombres\obj\Debug\ControlarNombres.pdb
 C:\Users\nicol\source\repos\DesafiosTecnicos\ControlarNombres\obj\Debug\ControlarNombres.csproj.AssemblyReference.cache
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\ControlarNombres\bin\Debug\ControlarNombres.exe.config
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\ControlarNombres\bin\Debug\ControlarNombres.exe
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\ControlarNombres\bin\Debug\ControlarNombres.pdb
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\ControlarNombres\obj\Debug\ControlarNombres.csproj.AssemblyReference.cache
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\ControlarNombres\obj\Debug\ControlarNombres.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\ControlarNombres\obj\Debug\ControlarNombres.exe
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\ControlarNombres\obj\Debug\ControlarNombres.pdb

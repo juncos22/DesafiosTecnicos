@@ -89,10 +89,10 @@ namespace ControlarNombres
                     }
                     else if (!EsInicial(palabras[0]) && EsNombreCompleto(palabras[0])
                         && EsInicial(palabras[1])
-                        && !EsInicial(palabras[2])) // La ultima posibilidad será que el primer nombre
+                        && !EsInicial(palabras[2]) && EsNombreCompleto(palabras[2])) // La ultima posibilidad será que el primer nombre
                     {                               // no sea una inicial y que sea un nombre completo
                         nombreValido = true;        // ademas de que el segundo nombre sea inicial, y 
-                    }                               // el apellido no lo sea, de lo contrario 
+                    }                               // el apellido no lo sea y sea un nombre completo, de lo contrario 
                     else                            // el nombre ingresado será invalido.
                     {
                         nombreValido = false;

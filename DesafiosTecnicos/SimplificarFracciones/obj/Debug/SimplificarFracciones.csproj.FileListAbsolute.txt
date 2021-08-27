@@ -5,3 +5,10 @@ C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\Sim
 C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.csproj.CoreCompileInputs.cache
 C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.exe
 C:\Users\nicol\source\repos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.pdb
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\SimplificarFracciones\bin\Debug\SimplificarFracciones.exe.config
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\SimplificarFracciones\bin\Debug\SimplificarFracciones.exe
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\SimplificarFracciones\bin\Debug\SimplificarFracciones.pdb
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.csproj.AssemblyReference.cache
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.exe
+C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos\SimplificarFracciones\obj\Debug\SimplificarFracciones.pdb

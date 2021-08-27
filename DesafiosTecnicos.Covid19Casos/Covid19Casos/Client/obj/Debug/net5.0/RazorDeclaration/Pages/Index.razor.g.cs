@@ -98,7 +98,7 @@ using Covid19Casos.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 101 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\Pages\Index.razor"
+#line 102 "C:\Users\Nicolas\source\repos\DesafiosTecnicos\DesafiosTecnicos.Covid19Casos\Covid19Casos\Client\Pages\Index.razor"
        
     // Objeto Response que recibirá el resultado de la búsqueda.
     public CasoResponse Response { get; set; }
