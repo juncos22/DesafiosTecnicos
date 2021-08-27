@@ -1,12 +1,12 @@
 # 3 Proyectos de Desafios Técnicos
 
-Este repositorio consiste en 3 proyectos desarrollados con C# en .NET 5.
+Este repositorio contiene 3 proyectos desarrollados con C# en .NET 5.
 Los dos primeros proyectos fueron desarrollados en consola y el tercero se 
 realizó con Blazor y ASP .NET Core.
 
 ### - Primer Proyecto: Simplificar Fracciones
 El primer proyecto consiste en un programa de consola donde se busca simplificar
-en su mínima expresión a una fracción determinada.
+a su mínima expresión una fracción determinada.
 La función recibe la fracción en formato cadena o string, para luego separar el 
 numerador y denominador por medio del caracter '/'. 
 
@@ -35,7 +35,7 @@ if (numerador % denominador == 0)
 
 * Si el paso anterior no se dió, entonces procederá a calcular el Minimo Común Divisor de la fracción. Se creó un método especifico para realizar este cálculo, la cual recibe como parámetros al numerador y denominador con formato int o entero.
 * Esta función lo que va a hacer es ir calculando el resto de la división entre el numerador y el denominador. Mientras tanto, va a evaluar que el valor del denominador sea diferente de 0. Mientras esta condición se cumpla, se mantendrá calculando el resto del cociente entre el numerador y el denominador, para luego intercambiar los valores de las variables n (numerador), d (denominador) y el resto. El valor del denominador pasara al numerador, mientras que el valor del resto se asignará a la variable del denominador.
-* Una vez que el resto quedó en 0 en la última vuelta, el denominador recibira este valor, mientras que el numerador se quedará con el valor buscado, es decir, el Mínimo Común Denominador. En este punto el ciclo se terminará y la función devolverá el valor buscado:
+* Una vez que el resto quedó en 0 en la última vuelta, el denominador recibirá este valor, mientras que el numerador se quedará con el valor buscado, es decir, el Mínimo Común Denominador. En este punto el ciclo se terminará y la función devolverá el valor buscado:
 
 ~~~
 static int Mcd(int n, int d)
@@ -69,7 +69,7 @@ return $"{numerador}/{denominador}";
 -------------------------------------------------------------------------------------
 
 ### - Segundo Proyecto: Controlar Nombres
-Este proyecto consiste en una aplicación de consola para validar diferentes estandards o formas específicas de ingresar un nombre. Consiste en ingresar una cadena de texto o string, la cual obtendrá un nombre completo, es decir, un nombre y apellido o un primer y segundo nombre y un apellido. El objetivo de este proyecto es validar que el nombre ingresado respete estos estandares aplicados para que el nombre se considere válido. La función encargada de esto recibirá esta cadena de texto y devolverá un valor booleano el cual confirmará si se ingresó un nombre válido o no.
+Este proyecto consiste en una aplicación de consola para validar diferentes estandares o formas específicas de ingresar un nombre. Consiste en ingresar una cadena de texto o string, la cual obtendrá un nombre completo, es decir, un nombre y apellido o un primer y segundo nombre y un apellido. El objetivo de este proyecto es validar que el nombre ingresado respete estos estandares aplicados para que el nombre se considere válido. La función encargada de esto recibirá esta cadena de texto y devolverá un valor booleano el cual confirmará si se ingresó un nombre válido o no.
 
 Para esto se crearon diferentes funciones para validar estos patrones, de esta forma, el código de la función principal será mas legible.
 
@@ -85,7 +85,7 @@ static bool EsNombreCompleto(string palabra)
 ~~~
 
 ###### Función EstaCapitalizada(string palabra) : bool
-Esta función validará que la palabra ingresada este capitalizada, es decir, que su letra inicial sea mayúscula. Para esto se realizará una operación donde se comparará la primera letra de la palabra con su versión en mayúscula, para esto se debe convertir el primer caracter de la misma en cadena o string. Si esto es así, la función devolverá true, de lo contrario, devolverá false:
+Esta función validará que la palabra ingresada este capitalizada, es decir, que su letra inicial sea mayúscula. Para esto se realizará una operación donde se comparará la primera letra de la palabra con su versión en mayúscula, para esto se debe convertir el primer caracter de la misma en cadena o string. Si se cumple la condición, la función devolverá true, de lo contrario, devolverá false:
 
 ~~~
 static bool EstaCapitalizada(string palabra)
@@ -109,15 +109,15 @@ static bool EsInicial(string palabra)
 ###### Función ValidarNombre(string nombre) : bool
 Esta es la función principal, la cual evaluará que la cadena principal, es decir, el nombre completo ingresado, sea un nombre válido. Por lo tanto, y en base al resultado obtenido de las funciones anteriores, irá evaluando todas y cada una de las posibilidades para que se considere correcta la entrada de texto:
 
-1. Primero guardara la entrada de texto como un arreglo de palabras separado por los espacios, además se creará una variable booleana que guarde el resultado final.
-2. Se valida que el nombre posea 2 o más caracteres, de lo contrario no se considerará un nombre válido.
+1. Primero guarda la entrada de texto como un arreglo de palabras separado por los espacios, además se creará una variable booleana que guarde el resultado final.
+2. Se valida que el nombre posea 2 o más palabras, de lo contrario no se considerará un nombre válido.
 3. En caso de que la entrada contenga solo 2 valores, se evaluarán las siguientes condiciones:
 ~~~
 if (palabras.Length == 2)
 {
 ~~~
 4. Luego comienzan a validarse todas las posibilidades que puedan llegar a ocurrir con el formato de la cadena ingresada:
-    * Si el primer valor y el segundo estan capitalizados, pasará a evaluar la siguiente condición.
+    * Si el primer valor y el segundo estan capitalizados, pasará a evaluar la siguiente condición, de lo contrario la variable nombreValido será false.
     ~~~
     if (EstaCapitalizada(palabras[0]) && EstaCapitalizada(palabras[1]))
     {
@@ -169,9 +169,9 @@ else if (palabras.Length == 3)
     ~~~
     * Si la primera y segunda palabra son iniciales, pero la tercera no lo es, se considerará un nombre válido, de lo contrario pasará a la siguiente condición.
     ~~~
-     else if (EsInicial(palabras[0]) && EsInicial(palabras[1]) &&           !EsInicial(palabras[2])) 
+     else if (EsInicial(palabras[0]) && EsInicial(palabras[1]) && !EsInicial(palabras[2])) 
      {
-            nombreValido = true;
+        nombreValido = true;
      }
     ~~~
     * Si la primera palabra no es inicial y es un nombre completo, la segunda es inicial pero la tercera no lo es, el nombre será válido, de lo contrario, se considerará nombre no válido.
@@ -305,6 +305,7 @@ public static bool ValidarNombre(string nombre)
     return nombreValido;
 }
 ~~~
+-----------------------------------------------------------------
 
 ### - Tercer Proyecto: API Básica
 El siguiente proyecto consiste en una API web que maneja información relevante a la pandemia de SarsCoVid-19 ocurrida durante los 2 últimos años. El proyecto consta de la API web, la cual maneja esta información, y la aplicación que consume esta misma.
@@ -312,13 +313,46 @@ El siguiente proyecto consiste en una API web que maneja información relevante 
 #### - API Web
 La API maneja esta información que, al principio de su desarrollo, se valió del archivo .csv proveído por el sitio oficial del gobierno de Córdoba, el cual se usó para leer sus registros y guardarlos en un archivo de base de datos SQLite portable para facilitar la consulta y registro de nuevos casos.
 
+### Clases principales:
+* ApplicationDbContext
+* Caso
+* CasoViewModel
+* BusquedaViewModel
+* ListCasoViewModel
+* CasoResponse
+* CovidController
+
+#### ApplicationDbContext
+Esta clase es la encargada de realizar la conexión a la base de datos y manejar el modelo de datos de la clase Caso. Por medio de esta clase se realizan las operaciones a la base de datos (consultas, registros).
+
+#### Caso
+Es el modelo de datos que mapea la información de la base de datos, mapeando la tabla Casos en esta misma clase para poder manejar la información en la base de datos. Posee todos los atributos de la tabla (Fecha, Edad, Genero, Provincia).
+
+#### CasoViewModel
+Esta clase hace de intermediaria entre el modelo de datos, la lógica de negocio y la vista que interactúa con el usuario. De esta forma, se crea una capa extra que mantiene al usuario sin interacción directa con el modelo de datos.
+
+#### BusquedaViewModel
+Esta clase se usa para recibir los parámetros de busqueda que maneje el usuario a la hora de filtrar la informacón que desea consultar. Posee los atributos requeridos para manejar estos filtros (FechaInicio, FechaFin, EdadInicio, EdadFin, Genero, Provincia). Su función es parecida a la de la clase CasoViewModel, separando la logica de negocio del modelo de datos y la vista.
+
+#### ListCasoViewModel
+Esta clase se encarga de proveer la información que consulte el usuario a la base de datos. Posee los mismos atributos del modelo de datos de la clase Caso y su función es parecida a la de CasoViewModel y BusquedaViewModel.
+
+#### CasoResponse
+Esta clase se encarga de proveer una respuesta al usuario cuando realiza las consultas a la base de datos. Posee 3 atributos importantes: StatusCode, Mensaje y Data. El primer atributo provee un código de estado el cual puede ser 200 (petición exitosa) o 400 (error en la petición). Además el atributo Mensaje se encarga de darle un mensaje notificando al usuario sobre el estado de la respuesta obtenida. Y el atributo Data contiene la lista de objetos de tipo ListCasoViewModel, el cuál será el resultado de una petición exitosa. En caso de obtener una respuesta exitosa, el objeto de tipo CasoResponse almacenará el código 200 y la lista con los resultados que se mostrarán al usuario, en caso de que haya un error en la petición, la respuesta devolverá el codigo 400 y el mensaje de error que se mostrará al usuario.
+
+#### CovidController
+Esta es la clase que posee todos los endpoints principales, donde se maneja la clase ApplicationDbContext por medio de la inyección de dependencias y que se encarga de realizar todas las operaciones de la base de datos. Cada endpoint tiene su método donde se realizan las consultas a la API y se devuelve la respuesta con la información.
+
 ##### Endpoints
 La API contiene los siguientes endpoints de consulta y registro de información:
 * /covid
 * /covid/total
 * /covid/update
 
+##### /covid
 -- El primer endpoint se realizó más que nada para consultar la información completa, de manera que se pueda ver el filtrado a la hora de buscar por los diferentes parámetros.
+
+##### /covid/total
 -- El segundo endpoint es el que se usará para filtrar por los diferentes parámetros elegidos por el usuario.
 Los parametros disponibles son los siguientes:
 * FechaInicio
@@ -328,4 +362,25 @@ Los parametros disponibles son los siguientes:
 * Genero
 * Provincia
 
-Estos parámetros son pasados por medio de un modelo de vistas o ViewModel llamado BusquedaViewModel, por el cual el usuario envia los parámetros por medio de los atributos de esta clase -- continuar acá
+Estos parámetros son pasados por medio de un modelo de vistas o ViewModel llamado BusquedaViewModel, por el cual el usuario envía los parámetros por medio de los atributos de esta clase. Los parámetros de la clase son enviados hacia el método que contiene el endpoint /covid/total donde se van a filtrar los datos por los parametros que reciba y devolverá la respuesta por medio de la clase CasoResponse.
+
+#### - Blazor UI
+La vista está hecha con el framework Blazor y diseñado con Bootstrap donde el usuario interactua con el modelo de vistas (ViewModel) el cual le proveerá la información requerida en sus consultas. Se mantuvo una interfaz simple y concisa la cual consiste en 2 páginas principales:
+
+* Index.razor
+* SaveData.razor
+  
+##### - Index.razor
+Esta es la página donde se muestra la información de los casos de Covid 19 y se realizan las consultas por medio de un formulario el cual posee todos los campos del modelo de vistas BusquedaViewModel que será enviado al modelo de datos el cual enviará el valor de los parámetros para poder filtrar en la base de datos. Además se usó la clase HttpClient inyectada en la página para poder realizar las peticiones HTTP GET a la API de forma asíncrona al endpoint /covid/total y obtener la respuesta con el objeto CasoResponse.
+
+##### - SaveData.razor
+Esta página es la encargada de guardar los nuevos registros de casos de Covid 19 en la base de datos. Posee un formulario con los campos relacionados al modelo de vistas de la clase CasoViewModel la cual le envía los datos al modelo de datos por medio de una petición HTTP POST asíncrona realizada con la clase inyectada HttpClient la cual realiza la petición al endpoint /covid/update y guarda la información enviada en la base de datos.
+Además el modelo de vistas CasoViewModel maneja ciertas validaciones para cada uno de sus atributos, de forma que no le deje al usuario ingresar información errónea o incompleta.
+
+Las validaciones son las siguientes:
+* [Required()]
+* [Range()]
+  
+La primer validación se usó en la mayoría de los atributos de la clase CasoViewModel, para evitar campos vacíos en el formulario, mientras que la segunda validación se usó solamente para el atributo Edad, el cual no debe permitir valores menores o iguales a 0 ni mayores a 100 (se manejó una edad promedio aproximada de vida).
+
+Además se agregó una función para limpiar los filtros de búsqueda pra facilitar nuevas consultas a la información.
